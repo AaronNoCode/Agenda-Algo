@@ -23,15 +23,21 @@
           <input id="theme-switch" type="checkbox" />
           <span class="slider round"></span>
         </label>
-      </div>
+        </div>
     </header>
 
     <nav>
-      <button id="show-calendar">Calendar</button>
-      <button id="show-reminders">Reminders</button>
+      <label for="show-calendar" class="tab">             
+        <input type="radio" id="show-calendar" name="section" checked></input>
+        <span class="tab-cover" id="calendar-tab">Calendar</span>
+      </label>
+      <label for="show-reminders" class="tab">
+        <input type="radio" id="show-reminders" name="section"></input>
+        <span class="tab-cover" id="reminders-tab">Reminders</span>
+      </label>
     </nav>
-
-    <section class='calendario'>
+    
+    <section class="calendario">
       <table class="table-events">
         <tr>
           <th>Título</th>
@@ -41,11 +47,17 @@
       </table>
       <div class="overlay"></div>
       <div class="new-event-form">
-        <fieldset id="new-event" >
+        <fieldset id="new-event">
           <legend>Nuevo evento</legend>
-          <label for="titulo-evento">Título <input id="titulo-evento" type="text" required /></label>
-          <label for="fecha-evento">Fecha <input id="fecha-evento" type="date" required /></label>
-          <label for="hora-evento">Hora <input id="hora-evento" type="time" required /></label>
+          <label for="titulo-evento"
+            >Título <input id="titulo-evento" type="text" required
+          /></label>
+          <label for="fecha-evento"
+            >Fecha <input id="fecha-evento" type="date" required
+          /></label>
+          <label for="hora-evento"
+            >Hora <input id="hora-evento" type="time" required
+          /></label>
           <div class="buttons-wrapper">
             <button type="submit">Submit</button>
             <button type="cancel">Cancel</button>
@@ -55,9 +67,7 @@
     </section>
 
     <section class="reminders">
-      <table class="list-reminders">
-
-      </table>
+      <ul class="list-reminders"></ul>
     </section>
   </body>
 </html>
