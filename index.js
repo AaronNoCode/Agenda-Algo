@@ -21,3 +21,7 @@ themeSwitch.addEventListener('change', () => {
 
 })
 
+/*
+Need control the overlay div when showing the form for new event
+*/
+

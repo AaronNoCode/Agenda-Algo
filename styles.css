@@ -15,6 +15,136 @@ body {
   font-family: "Open Sans";
   background-color: var(--background);
   color: var(--font-color);
+  transition: 0.3s;
+  user-select: none;
+}
+.overlay {
+  position: fixed;
+  /* TODO */
+  display: none;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  backdrop-filter: blur(2px);
+  z-index: 998;
+}
+nav {
+  display: flex;
+  justify-content: space-between;
+  gap: 0px;
+}
+
+nav > button {
+  width: 50%;
+  height: 40px;
+  border-top-right-radius: 10px;
+  border-top-left-radius: 10px;
+  border: 1px solid var(--background);
+  font-size: 1.1em;
+  background-color: var(--secondary);
+  color:var(--font-color);
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+nav > button:hover {
+  background-color: var(--primary);
+  color:var(--background)
+}
+
+
+
+.new-event-form {
+  background-color: var(--background);
+  width: clamp(300px,80%,500px);
+  height: 345px;
+  /* TODO */
+  display: none;
+  position: relative;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  margin: auto;
+  z-index: 999;
+  padding: 10px;
+  border-radius: 10px;
+  border: 2px solid var(--secondary);
+  user-select: contain;
+}
+#new-event {
+  border: none;
+}
+#new-event > legend {
+  width:100%;  
+  padding-bottom: 15px;
+  text-align: center;
+  font-weight: 500;
+  font-size: 1.5em;
+  border-bottom: 1px solid var(--secondary);
+}
+#new-event > label {
+  display: block;
+  width:100%;
+  padding:10px;
+  margin-bottom: -5px;
+  font-weight: 600;
+}
+#new-event > label:last-of-type {
+  margin-bottom: 0;
+}
+#new-event > label > input {
+  width: 100%;
+  height: 1.8rem;
+  padding: 5px;
+  margin-top: 5px;
+  background-color: var(--secondary);
+  border: none;
+  border-radius: 10px;
+  color:var(--font-color)
+}
+
+#new-event > label > input:focus {
+  outline: none;
+  border: 1px solid var(--accent);
+}
+
+.buttons-wrapper{
+  display: flex;
+  justify-content: center;
+}
+#new-event > .buttons-wrapper > button {
+  width: 46%;
+  height: 30px;
+  padding: 5px;
+  font-weight: 600;
+  font-size: 1em;
+  border-radius: 10px;
+  cursor: pointer;
+  margin:10px 2px 20px 2px;
+  border:1px solid var(--secondary);
+  color:var(--font-color)
+}
+
+#new-event > .buttons-wrapper > button:first-of-type {
+  background-color: var(--secondary);
+  transition: 0.3s;
+}
+
+#new-event > .buttons-wrapper > button:last-of-type {
+  background-color: var(--background);
+  transition: 0.3s;
+}
+
+#new-event > .buttons-wrapper > button:first-of-type:hover {
+  background-color: var(--primary);
+  border-color: var(--primary);
+  color:var(--accent)
+}
+
+#new-event > .buttons-wrapper > button:last-of-type:hover {
+  background-color:var(--accent);
 }
 
 header {
@@ -23,7 +153,6 @@ header {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  border-bottom: 2px solid var(--primary);
 }
 
 #title {

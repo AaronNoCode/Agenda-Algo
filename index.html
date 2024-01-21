@@ -16,34 +16,48 @@
 
   <body>
     <header>
-      <h1 id="title">Agenda HTML CSS JS</h1>
+      <h1 id="title">Agenda</h1>
       <div id="switch-wrapper">
-        <img id="theme-icon" src="icon/moon.svg">
+        <img id="theme-icon" src="icon/moon.svg" />
         <label class="switch" id="switch">
           <input id="theme-switch" type="checkbox" />
           <span class="slider round"></span>
         </label>
       </div>
     </header>
-    <aside>
-      <div class="side-links-wrapper">
-        <a>Eventos guardados</a>
-        <a>Agregar evento</a>
-        <a>Recordatorios</a>
+
+    <nav>
+      <button id="show-calendar">Calendar</button>
+      <button id="show-reminders">Reminders</button>
+    </nav>
+
+    <section class='calendario'>
+      <table class="table-events">
+        <tr>
+          <th>Título</th>
+          <th>Fecha</th>
+          <th>Hora</th>
+        </tr>
+      </table>
+      <div class="overlay"></div>
+      <div class="new-event-form">
+        <fieldset id="new-event" >
+          <legend>Nuevo evento</legend>
+          <label for="titulo-evento">Título <input id="titulo-evento" type="text" required /></label>
+          <label for="fecha-evento">Fecha <input id="fecha-evento" type="date" required /></label>
+          <label for="hora-evento">Hora <input id="hora-evento" type="time" required /></label>
+          <div class="buttons-wrapper">
+            <button type="submit">Submit</button>
+            <button type="cancel">Cancel</button>
+          </div>
+        </fieldset>
       </div>
-    </aside>
-    <table class="table-events">
-      <tr>
-        <th>Título</th>
-        <th>Fecha</th>
-        <th>Hora</th>
-      </tr>
-    </table>
-    <fieldset id="new-event">
-      <legend>Nuevo evento</legend>
-      <label>Título: <input id="titulo-evento" type="text" required /></label>
-      <label>Fecha: <input id="fecha-evento" type="date" required /></label>
-      <label>Hora: <input id="hora-evento" type="time" required /></label>
-    </fieldset>
+    </section>
+
+    <section class="reminders">
+      <table class="list-reminders">
+
+      </table>
+    </section>
   </body>
 </html>
