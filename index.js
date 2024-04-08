@@ -101,7 +101,6 @@ function createCalendar() {
     let currentDay = 1
     // <td> with actual dates
     while (calendarDate.getMonth() == month) {
-        // console.log(`${calendarDate.getFullYear()}-${calendarDate.getMonth()}-${calendarDate.getDate()}`)
         if(localStorage.getItem(`${calendarDate.getFullYear()}-${calendarDate.getMonth()}-${calendarDate.getDate()}`) !== null){
             table += `<td class="${currentDay++}">
                         ${calendarDate.getDate()}
@@ -140,16 +139,12 @@ const previewText = document.querySelector('.event-preview-text')
 const cells = document.querySelectorAll('td')
 cells.forEach(td => {
     td.addEventListener('click', () => {
-        console.log('clicked')
         if(td.childElementCount === 0){
             return
         }
         daySelected = td.className
-        console.log(`${year}-${month}-${td.className}`)
         const hour = localStorage.getItem(`${year}-${month}-${td.className}`)
         const text = localStorage.getItem(hour)
-        console.log(hour)
-        console.log(text)
         previewHour.innerHTML = hour
         previewText.innerHTML = text
         overlayBlur.style.display = 'block'
@@ -196,7 +191,6 @@ function addEvent() {
     createCalendar()
     newEventForm.style.display = 'none'
     overlayBlur.style.display = 'none'
-    console.log('added')
     dateInput.value = ''
     hour.value = ''
     text.value = ''
@@ -210,10 +204,8 @@ function closePreview(){
 const closePreviewButton = document.querySelector('.close-preview').addEventListener('click',closePreview)
 const deleteEvent = document.querySelector('.delete-event').addEventListener('click', () => {
     const hour = localStorage.getItem(`${year}-${month}-${daySelected}`)
-    console.log(daySelected)
     localStorage.removeItem(`${year}-${month}-${daySelected}`)
     localStorage.removeItem(hour)
-    console.log("deez")
     createCalendar()
     closePreview()
 })
@@ -226,7 +218,6 @@ function createReminders() {
     let remindersConstruct = ''
     let day = date.getDate()
     for (let i = date.getDay(); i < 6; i++){ 
-        console.log(`${year}-${month}-${day}`)
         let hour = localStorage.getItem(`${year}-${month}-${day}`)
         if (hour === null) {
             continue
